@@ -621,7 +621,6 @@ if ( is_admin() ) {
 else
 {
     add_shortcode( 'CPABC_APPOINTMENT_CALENDAR', 'cpabc_appointments_filter_content' );
-
     add_shortcode( 'CPABC_EDIT_CALENDAR', 'cpabc_appointments_filter_edit' );
     add_shortcode( 'CPABC_EDIT_CALENDAR_FRONTEND', 'cpabc_appointments_filter_edit_frontend' );
     add_shortcode( 'CPABC_APPOINTMENT_LIST', 'cpabc_appointments_filter_list' );

@@ -58,7 +58,7 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
             <div id="normal-sortables" class="meta-box-sortables">
 
                 <hr />
-                <h3>These calendar settings apply only to: <?php echo $mycalendarrows[0]->uname; ?></h3>
+                <h3>Thiết lập cài đặt Calendar cho : <?php echo $mycalendarrows[0]->uname; ?></h3>
 
                 <div id="metabox_basic_settings" class="postbox" >
                     <h3 class='hndle' style="padding:5px;"><span>Calendar Configuration / Administration</span></h3>
@@ -77,7 +77,7 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
 
                         <script>initAppCalendar("cal<?php echo CP_CALENDAR_ID; ?>","3","1","<?php echo CPABC_TDEAPP_DEFAULT_CALENDAR_LANGUAGE; ?>",{m1:"Please, select your appointment."});</script>
 
-                        <div style="padding:10px"><div id="caladmin"><div id="cal<?php echo CP_CALENDAR_ID; ?>Container"></div></div></div>
+                        <div style="padding:0px"><div id="caladmin"><div id="cal<?php echo CP_CALENDAR_ID; ?>Container"></div></div></div>
                         <div style="clear:both;height:20px" ></div>
                         <div id="demo" class="yui-navset" style="padding-left:10px;width:690px;"></div>
                         <div style="clear:both;height:20px" ></div>
