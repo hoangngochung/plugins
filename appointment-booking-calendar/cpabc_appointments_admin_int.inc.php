@@ -58,7 +58,7 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
             <div id="normal-sortables" class="meta-box-sortables">
 
                 <hr/>
-                <h3>Thiết lập cài đặt Calendar cho : <?php echo $mycalendarrows[0]->uname; ?></h3>
+                <h3>Thiết lập cài đặt Calendar cho: <?php echo $mycalendarrows[0]->uname; ?></h3>
 
                 <div id="metabox_basic_settings" class="postbox">
                     <h3 class='hndle' style="padding:5px;"><span>Calendar Configuration / Administration</span></h3>
@@ -786,80 +786,80 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
                 </div>
 
 
-<!--                <div id="metabox_basic_settings" class="postbox">-->
-<!--                    <h3 class='hndle' style="padding:5px;"><span>Email Reminder Settings  - Available only in Pro version</span>-->
-<!--                    </h3>-->
-<!---->
-<!--                    <div class="inside">-->
-<!--                        <table class="form-table">-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Enable e-mail reminder?</th>-->
-<!--                                <td><input type="checkbox" name="enable_reminder" disabled readonly size="40"-->
-<!--                                           value="1" --><?php //if (cpabc_get_option('enable_reminder', CPABC_APPOINTMENTS_DEFAULT_ENABLE_REMINDER)) echo 'checked'; ?><!-- />-->
-<!--                                    * This feature is available in the <a href="http://abc.dwbooster.com/download">pro-->
-<!--                                        version</a>.-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Send reminder:</th>-->
-<!--                                <td><input type="text" name="reminder_hours" disabled readonly size="2"-->
-<!--                                           value="--><?php //echo esc_attr(cpabc_get_option('reminder_hours', CPABC_APPOINTMENTS_DEFAULT_REMINDER_HOURS)); ?><!--"/>-->
-<!--                                    hours before the appointment-->
-<!--                                    <br/><em>Note: Hours date based in server time. Server time now-->
-<!--                                        is --><?php //echo date("Y-m-d H:i"); ?><!--</em>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Reminder email subject</th>-->
-<!--                                <td><input type="text" name="reminder_subject" disabled readonly size="70"-->
-<!--                                           value="--><?php //echo esc_attr(cpabc_get_option('reminder_subject', CPABC_APPOINTMENTS_DEFAULT_REMINDER_SUBJECT)); ?><!--"/>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Email format?</th>-->
-<!--                                <td>-->
-<!--                                    --><?php //$option = cpabc_get_option('nremind_emailformat', CPABC_APPOINTMENTS_DEFAULT_email_format); ?>
-<!--                                    <select name="nremind_emailformat">-->
-<!--                                        <option value="text"--><?php //if ($option != 'html') echo ' selected'; ?><!-->Plain Text-->
-<!--                                            (default)-->
-<!--                                        </option>-->
-<!--                                        <option value="html"--><?php //if ($option == 'html') echo ' selected'; ?><!-->HTML (use-->
-<!--                                            html in the textarea below)-->
-<!--                                        </option>-->
-<!--                                    </select>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Reminder email message</th>-->
-<!--                                <td><textarea cols="70" rows="3" disabled readonly-->
-<!--                                              name="reminder_content">--><?php //echo cpabc_get_option('reminder_content', CPABC_APPOINTMENTS_DEFAULT_REMINDER_CONTENT); ?><!--</textarea>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div id="metabox_basic_settings" class="postbox">
+                    <h3 class='hndle' style="padding:5px;"><span>Email Reminder Settings  - Available only in Pro version</span>
+                    </h3>
+
+                    <div class="inside">
+                        <table class="form-table">
+                            <tr valign="top">
+                                <th scope="row">Enable e-mail reminder?</th>
+                                <td><input type="checkbox" name="enable_reminder" disabled readonly size="40"
+                                           value="1" <?php if (cpabc_get_option('enable_reminder', CPABC_APPOINTMENTS_DEFAULT_ENABLE_REMINDER)) echo 'checked'; ?> />
+                                    * This feature is available in the <a href="http://abc.dwbooster.com/download">pro
+                                        version</a>.
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row">Send reminder:</th>
+                                <td><input type="text" name="reminder_hours" disabled readonly size="2"
+                                           value="<?php echo esc_attr(cpabc_get_option('reminder_hours', CPABC_APPOINTMENTS_DEFAULT_REMINDER_HOURS)); ?>"/>
+                                    hours before the appointment
+                                    <br/><em>Note: Hours date based in server time. Server time now
+                                        is <?php echo date("Y-m-d H:i"); ?></em>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row">Reminder email subject</th>
+                                <td><input type="text" name="reminder_subject" disabled readonly size="70"
+                                           value="<?php echo esc_attr(cpabc_get_option('reminder_subject', CPABC_APPOINTMENTS_DEFAULT_REMINDER_SUBJECT)); ?>"/>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row">Email format?</th>
+                                <td>
+                                    <?php $option = cpabc_get_option('nremind_emailformat', CPABC_APPOINTMENTS_DEFAULT_email_format); ?>
+                                    <select name="nremind_emailformat">
+                                        <option value="text"<?php if ($option != 'html') echo ' selected'; ?>>Plain Text
+                                            (default)
+                                        </option>
+                                        <option value="html"<?php if ($option == 'html') echo ' selected'; ?>>HTML (use
+                                            html in the textarea below)
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th scope="row">Reminder email message</th>
+                                <td><textarea cols="70" rows="3" disabled readonly
+                                              name="reminder_content"><?php echo cpabc_get_option('reminder_content', CPABC_APPOINTMENTS_DEFAULT_REMINDER_CONTENT); ?></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
 
 
-<!--                <div id="metabox_basic_settings" class="postbox">-->
-<!--                    <h3 class='hndle' style="padding:5px;"><span>Custom Settings - Available only in Pro version</span>-->
-<!--                    </h3>-->
-<!---->
-<!--                    <div class="inside">-->
-<!--                        <table class="form-table">-->
-<!--                            <tr valign="top">-->
-<!--                                <th scope="row">Options (drop-down select, one item per line with format: <span-->
-<!--                                        style="color:#ff0000">price | title</span>)<br/>-->
-<!--                                    <ul>Sample Format:</ul>-->
-<!--                                    --><?php //echo str_replace("\n", "<br />", CPABC_APPOINTMENTS_DEFAULT_EXPLAIN_CP_CAL_CHECKBOXES); ?>
-<!--                                </th>-->
-<!--                                <td>-->
-<!--                                    <em>This feature is available only in the <a-->
-<!--                                            href="http://abc.dwbooster.com/download">pro version</a>.</em>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div id="metabox_basic_settings" class="postbox">
+                    <h3 class='hndle' style="padding:5px;"><span>Custom Settings - Available only in Pro version</span>
+                    </h3>
+
+                    <div class="inside">
+                        <table class="form-table">
+                            <tr valign="top">
+                                <th scope="row">Options (drop-down select, one item per line with format: <span
+                                        style="color:#ff0000">price | title</span>)<br/>
+                                    <ul>Sample Format:</ul>
+                                    <?php echo str_replace("\n", "<br />", CPABC_APPOINTMENTS_DEFAULT_EXPLAIN_CP_CAL_CHECKBOXES); ?>
+                                </th>
+                                <td>
+                                    <em>This feature is available only in the <a
+                                            href="http://abc.dwbooster.com/download">pro version</a>.</em>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
 
                 <?php if (!defined('CPABC_CALENDAR_ON_PUBLIC_WEBSITE')) { ?>
                     <div id="metabox_basic_settings" class="postbox">
