@@ -9,11 +9,9 @@ if (!defined('CP_CALENDAR_ID'))
     define('CP_CALENDAR_ID', intval($_GET["cal"]));
 
 global $wpdb;
-
 $message = "";
 
 $records_per_page = 50;
-
 
 if (isset($_GET['delmark']) && $_GET['delmark'] != '') {
     for ($i = 0; $i <= $records_per_page; $i++)
@@ -47,10 +45,8 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
     if ($_GET["dfrom"] != '') $cond .= " AND (datatime >= '" . esc_sql($_GET["dfrom"]) . "')";
     if ($_GET["dto"] != '') $cond .= " AND (datatime <= '" . esc_sql($_GET["dto"]) . " 23:59:59')";
 
-
     $events = $wpdb->get_results("SELECT * FROM " . CPABC_APPOINTMENTS_CALENDARS_TABLE_NAME . " WHERE appointment_calendar_id=" . CP_CALENDAR_ID . $cond . " ORDER BY datatime DESC");
     $total_pages = ceil(count($events) / $records_per_page);
-
 
     if ($message) echo "<div id='setting-error-settings_updated' class='updated settings-error'><p><strong>" . $message . "</strong></p></div>";
 
@@ -79,7 +75,6 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
             <h3>This booking list applies only to: <?php echo $mycalendarrows[0]->uname; ?></h3>
         </div>
 
-
         <form action="admin.php" method="get">
             <input type="hidden" name="page" value="cpabc_appointments.php"/>
             <input type="hidden" name="cal" value="<?php echo CP_CALENDAR_ID; ?>"/>
@@ -100,7 +95,6 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
 
         <?php
 
-
         echo paginate_links(array(
             'base' => 'admin.php?page=cpabc_appointments.php&cal=' . CP_CALENDAR_ID . '&list=1%_%&dfrom=' . urlencode($_GET["dfrom"]) . '&dto=' . urlencode($_GET["dto"]) . '&search=' . urlencode($_GET["search"]),
             'format' => '&p=%#%',
@@ -115,7 +109,6 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
             'type' => 'plain',
             'add_args' => False
         ));
-
         ?>
 
         <div id="cpabc_printable_contents">

@@ -58,7 +58,7 @@ if (cpabc_appointment_is_administrator() || $mycalendarrows[0]->conwer == $curre
             <div id="normal-sortables" class="meta-box-sortables">
 
                 <hr />
-                <h3>Thiết lập cài đặt Calendar cho : <?php echo $mycalendarrows[0]->uname; ?></h3>
+                <h3>These calendar settings apply only to: <?php echo $mycalendarrows[0]->uname; ?></h3>
 
                 <div id="metabox_basic_settings" class="postbox" >
                     <h3 class='hndle' style="padding:5px;"><span>Calendar Configuration / Administration</span></h3>
